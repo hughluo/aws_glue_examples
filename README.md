@@ -2,9 +2,10 @@
 
 ## Add First Entry of An Array as New Field
 ```
-DFRaw.printSchema
 ```
 ```
+scala>  DFRaw.printSchema
+
 root
 |-- answerEntry: struct
 |    |-- sichtbarkeitsindex: array
@@ -35,9 +36,12 @@ val udf = addFirstEntryAsField("answerStruct.sichtbarkeitsindex", "sichtbarkeitS
 val DFNew = DFRaw.map(f=udf)
 
 
-DFNew.printSchema
 ```
+
 ```
+scala> DFNew.printSchema
+
+
 root
 |-- answerEntry: struct
 |    |-- sichtbarkeitsindex: array
@@ -64,7 +68,7 @@ import org.apache.spark.sql.Column
 ```
 
 ```
-scala > rawDyF.printSchema
+scala> rawDyF.printSchema
 
 
 root
@@ -89,7 +93,7 @@ val aggredDaF = rawDaF.groupBy(groupBy.map(col): _*).agg(exprs.head, exprs.tail:
 ```
 
 ```
-scala > aggredDyF.printSchema
+scala> aggredDyF.printSchema
 
 
 root
