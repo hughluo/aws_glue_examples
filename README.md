@@ -2,6 +2,7 @@
 
 ## Add First Entry of An Array as New Field
 ```
+import com.amazonaws.services.glue.types.ArrayNode
 ```
 ```
 scala>  DFRaw.printSchema
@@ -34,8 +35,6 @@ def addFirstEntryAsField(field: String, newField: String): DynamicRecord => Dyna
 
 val udf = addFirstEntryAsField("answerStruct.sichtbarkeitsindex", "sichtbarkeitStruct")
 val DFNew = DFRaw.map(f=udf)
-
-
 ```
 
 ```
