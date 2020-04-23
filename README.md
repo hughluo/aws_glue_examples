@@ -4,6 +4,7 @@
 ```
 DFRaw.printSchema
 ```
+```
 root
 |-- answerEntry: struct
 |    |-- sichtbarkeitsindex: array
@@ -13,6 +14,7 @@ root
 |    |    |    |-- value: choice
 |    |    |    |    |-- double
 |    |    |    |    |-- int
+```
 
 ```
 def addFirstEntryAsField(field: String, newField: String): DynamicRecord => DynamicRecord = { record =>
@@ -35,6 +37,7 @@ val DFNew = DFRaw.map(f=udf)
 
 DFNew.printSchema
 ```
+```
 root
 |-- answerEntry: struct
 |    |-- sichtbarkeitsindex: array
@@ -50,3 +53,4 @@ root
 |    |-- value: choice
 |    |    |-- double
 |    |    |-- int
+```
